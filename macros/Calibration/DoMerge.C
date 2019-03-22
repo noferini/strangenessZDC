@@ -1,6 +1,6 @@
 #include <TGrid.h>
 
-void DoMerge(const char* period="*pass2*",const char* output="AnalysisResultsMerged.root", const char *path="/alice/cern.ch/user/f/fercoles/AnalysisLeading2019/Calibration/"){
+void DoMerge(const char* period="*bpass2*",const char* output="AnalysisResultsMerged12b.root", const char *path="/alice/cern.ch/user/f/fercoles/AnalysisLeading2019/Calibration/"){
   system(Form("alien_ls -b %s/%s/OutputDir/*/AnalysisResults.root |awk \'{print \"alien://\"$2}\' >listtobemerged",path,period));
  
   TGrid::Connect("alien://");
