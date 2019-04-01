@@ -25,6 +25,6 @@ Here we calibrate and create a OADB file containing the information about multip
    This will merge all root files from the subjobs from phase 1 and will create a unique file called AnalysisResults.root for each period
 
 
-3) Run the macro DoMerge.C and merge in one file all root files from all the run numbers for one period and download it in local
+3) Run the macro DoMerge.C (on ROOT6) and merge in one file all root files from all the run numbers for one period and download it in local, don't forget to set the right path of the period in the macro
 
 4) Run CalibratePeriodPP.cxx (on ROOT6) to create the OADB file you are looking for, don't forget to set the name of the period in the macro
