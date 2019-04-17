@@ -79,6 +79,7 @@ class AliAnalysisTaskLeading : public AliAnalysisTaskSE {
   Float_t fP2pz,fP2X,fP2Y,fP2Z; //!
   Int_t fN1pdg,fP1pdg,fN2pdg,fP2pdg; //!
   Int_t fN1hits,fN2hits,fP1hits,fP2hits; //!
+  Int_t fTriggerMask;//!
 
   //Calib
   Float_t lV0M;//!

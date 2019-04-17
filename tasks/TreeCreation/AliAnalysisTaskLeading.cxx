@@ -214,7 +214,7 @@ void AliAnalysisTaskLeading::UserCreateOutputObjects()
   fTevents->Branch("V0MEstimator_abs",&AbsV0MEstimator,"V0MEstimator_abs/F");
   fTevents->Branch("V0AEstimator_abs",&AbsV0AEstimator,"V0AEstimator_abs/F");
   fTevents->Branch("V0CEstimator_abs",&AbsV0CEstimator,"V0CEstimator_abs/F");
-
+  fTevents->Branch("TriggerMask",&fTriggerMask,"TriggerMask/I");
 
   if(fIsMC){
     fTevents->Branch("N1pdg",&fN1pdg,"N1pdg/I");
@@ -300,7 +300,7 @@ void AliAnalysisTaskLeading::UserExec(Option_t *)
   // return if no selection
     if(!isSelected){
       cout<< "no selection"<< "\n\n\n\n\n"<< endl;
-  return;
+  //  return;
   } 
 
   fRun = fESD->GetRunNumber();
@@ -340,6 +340,9 @@ void AliAnalysisTaskLeading::UserExec(Option_t *)
   fadcZDCP2[3] = aZDCP2[3];
   fadcZDCP2[4] = aZDCP2[4];
 
+  
+  //Dalla TriggerMask Corrente la scrive nel Tree
+  fTriggerMask= (inputHandler->IsEventSelected());
   //Trigger mask filled:
   for(Int_t i=0;i<32;i++) {
     unsigned bit=(1<<i);//shift of 1 of i positions
@@ -491,6 +494,7 @@ void AliAnalysisTaskLeading::UserExec(Option_t *)
   fN2hits=0;
   fP1hits=0;
   fP2hits=0;
+  fTriggerMask=0;
 
   // take MC truth for ZDC from Track Refs
   if(fIsMC){
