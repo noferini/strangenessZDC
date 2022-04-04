@@ -1,0 +1,33 @@
+# files available here
+/alice/cern.ch/user/n/noferini/fileStrangeness/
+
+# prepare graph with MC predictions
+# input: MC outputs with TTree
+./mctruth.sh 0
+./mctruth.sh 1
+./mctruth.sh 2
+./mctruth.sh 3
+# using mctruth*.C macros to produce mctruth*.root files with graphs
+
+
+
+
+# prepare graph for comparison in our centrality classes
+# input: mctruth*.root for MC and for DATA:
+#        XiYieldsSPDClusters_SelectedWithV0M1020.root
+#        XiYieldsSPDClusters_SelectedWithV0M4050.root
+#        XiYieldsV0M_SelectedWithSPDClusters0100.root
+#        XiYieldsV0M_SelectedWithSPDClusters1020.root
+#        XiYieldsV0M_SelectedWithSPDClusters4050.root
+root -b -q -l drawselcomp.C\(0\)
+root -b -q -l drawselcomp.C\(1\)
+root -b -q -l drawselcomp.C\(2\)
+root -b -q -l drawselcomp.C\(3\)
+
+or
+
+root -b -q -l drawselcompSPD.C\(0\)
+root -b -q -l drawselcompSPD.C\(1\)
+root -b -q -l drawselcompSPD.C\(2\)
+root -b -q -l drawselcompSPD.C\(3\)
+
