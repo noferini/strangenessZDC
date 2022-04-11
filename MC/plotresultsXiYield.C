@@ -120,7 +120,7 @@ void plotresultsXiYield(int imc=0,bool s1020=true, bool s4050=true, bool v1020=t
   pad1->SetTickx();
   TH1D* hL = new TH1D("hL","",10,0,4.);
   hL->SetStats(0);
-  hL->GetXaxis()->SetTitle("<N_{ch}>/<N_{ch}_{MB}>");
+  hL->GetXaxis()->SetTitle("<N_{ch}>/<N_{ch}>_{MB}");
   hL->GetYaxis()->SetTitle("#frac{h/#LT#it{n}_{ch}#GT_{|#it{#eta}|<0.5} }{( h/#LT#it{n}_{ch}#GT_{|#it{#eta}|<0.5} )_{INEL>0}} ");
   hL->GetXaxis()->SetTitleSize(0.06);
   hL->GetYaxis()->SetTitleSize(0.06);
