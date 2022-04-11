@@ -120,7 +120,7 @@ void plotresultsXiYield(int imc=0,bool s1020=true, bool s4050=true, bool v1020=t
   pad1->SetTickx();
   TH1D* hL = new TH1D("hL","",10,0,4.);
   hL->SetStats(0);
-  hL->GetXaxis()->SetTitle("#LT d#it{N}_{ch}/d#it{#eta} #GT_{|#it{#eta}|<0.5}");
+  hL->GetXaxis()->SetTitle("<N_{ch}>/<N_{ch}_{MB}>");
   hL->GetYaxis()->SetTitle("#frac{h/#LT#it{n}_{ch}#GT_{|#it{#eta}|<0.5} }{( h/#LT#it{n}_{ch}#GT_{|#it{#eta}|<0.5} )_{INEL>0}} ");
   hL->GetXaxis()->SetTitleSize(0.06);
   hL->GetYaxis()->SetTitleSize(0.06);
@@ -155,7 +155,7 @@ void plotresultsXiYield(int imc=0,bool s1020=true, bool s4050=true, bool v1020=t
   pad2->SetTickx();
   TH1D* h1L = new TH1D("h1L","",10,0,2);
   h1L->SetStats(0);
-  h1L->GetXaxis()->SetTitle("#LT ZDC Energy Sum #GT (a.u.)");
+  h1L->GetXaxis()->SetTitle("<ZDC>/<ZDC>_{MB}");
   h1L->GetYaxis()->SetTitle("");
   h1L->GetXaxis()->SetTitleSize(0.06);
   h1L->GetYaxis()->SetTitleSize(0.06);
